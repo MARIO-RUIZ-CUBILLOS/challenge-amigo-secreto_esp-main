@@ -5,7 +5,7 @@ function agregarAmigo() {
     //capturar el valor del campo de entrada 
     let valorCaja = document.querySelector('#amigo');
     //validar entrada
-    if (valorCaja.value =="") {
+    if (valorCaja.value == "") {
         alert("Por favor ingresar un nombre");
     } else {
         amigos.push(valorCaja.value);
@@ -20,6 +20,17 @@ function actualizarListaAmigos() {
     lista.innerHTML = ''
     for (let index = 0; index < amigos.length; index++) {
         console.log(amigos[index]);
-        lista.innerHTML += amigos[index] + '<li>'
+        lista.innerHTML += amigos[index] + '<li>';
+    }
+}
+
+function sortearAmigo() {
+    if (amigos == ""){
+        console.log("listado vacio");
+    } else {
+        let numero = Math.floor(Math.random()*amigos.length);
+        let lista = document.querySelector('#listaAmigos');
+        console.log("hay " + numero +" amigos");
+        lista.innerHTML = "tu amigo secreto es: "+ amigos[numero];
     }
 }
